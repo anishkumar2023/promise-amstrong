@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+   <head>
+       <title>
+          promise
+       </title>
+   </head>
+   <body >
+   </body>
+       <script>
+                          <!-- amstron number -->
+
+let number=parseInt(prompt("Enter the number to find amstron or not"))
+function check(n){
+let a=n
+let d=a
+count=0
+while(a!=0){
+    let rem=a%10
+    a=(a-rem)/10
+	count++
+}
+let b=0
+while(d!=0){
+    let rem=d%10
+    d=(d-rem)/10
+    b+=(rem**count)
+}
+
+console.log(b)
+ return new Promise((re,rj)=>{
+     if(n===b){
+         re(n)
+     }
+     else{
+         rj(n)
+     }
+ })
+
+
+}
+check(number).then((x)=>{
+    document.write(`${x} is Amstron number`)
+})
+.catch((y)=>{
+    document.write(`${y} is not a Amstron number`)
+})
+
+
+</script>
+</html>
